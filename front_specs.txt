@@ -1,0 +1,24 @@
+Pour gagner un peu de temps j'ai fait comme-ci on avait rempli notre BDD avec les films dont la source aurait été http://omdbapi.com/
+Sinon pour s'y référer directement il aurait fallu créer une méthode qui envoie une request à ce site avec quelques paramètres..
+c'est éventuellement avec le score des "movie" (décrit plus bas) que j'aurais fait un easter egg du style une combinaison de touche pour spoiler le score en cours du film..
+
+Pour le dev front:
+Webservices:
+	Les objets de type 
+	*user (user.*) contiennent les arguments suivants:
+		-id: identifiant unique
+		-pseudo(string): pseudo
+		-email(string): email (unique)
+		-birthday(date): date de naissance
+	*movie (movie.*):
+		-id: identifiant unique
+		-title: titre du film
+		-poster: path vers l'image
+		-score: nombre de vote actuel du film 
+	*fonction: Enregistre un utilisteur en BDD
+		-registerUserAction => JSON => user
+		-movieVoteAction => JSON => [user, movie]
+		-movieDeleteAction=> JSON => [user, movie]
+		-movieListAction => JSON => user_movie
+		-userListAction => JSON => user_movie
+		-getPreferedMovie => JSON => movie['max_score', movie]
