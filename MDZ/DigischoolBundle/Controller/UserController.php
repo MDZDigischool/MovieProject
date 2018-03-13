@@ -31,10 +31,9 @@ class UserController extends Controller
 			$em->flush();
 			
 			$request->getSession()->getFlashBag()->add('notice', 'Enregistrement effectué avec succès, vous allez prochainement recevoir un email à l\'adresse....');
-			return $this->redirectToRoute('mdz_digischool_home');
+			return new JsonResponse(['user'=>$user]);
 		}
-		//Case fail or method is not POST, return back to the form 
-		return $this->render('MDZDigischoolBundle:Form:userRegisterForm.html.twig');
+		//Case fail redirect somewhere..
 	}
 	
 	

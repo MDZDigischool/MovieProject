@@ -12,7 +12,7 @@ class MovieRepository extends \Doctrine\ORM\EntityRepository
 {
 	
 	final public function getMaxVotes():array {
-		$query = $this->_em->createQuery('SELECT MAX(m.score), m ' .
+		$query = $this->_em->createQuery('SELECT MAX(m.score) as max_score, m ' .
 		'FROM MDZDigischoolBundle:Movie m');
 		
 		return $query->getQuery->getSingleResult();
