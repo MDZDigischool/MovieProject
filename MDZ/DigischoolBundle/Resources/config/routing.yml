@@ -1,0 +1,3 @@
+mdz_digischool_homepage:
+    path:     /
+    defaults: { _controller: MDZDigischoolBundle:Default:index }
